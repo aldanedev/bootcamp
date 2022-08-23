@@ -7,3 +7,4 @@ spring:
       host: localhost
       port: 27017
       database: creditsdb
+      auto-index: true
