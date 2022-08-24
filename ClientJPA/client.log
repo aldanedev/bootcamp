@@ -10546,3 +10546,33 @@ org.hibernate.TypeMismatchException: Provided id of the wrong type for class com
 [INFO ] [2022-08-24 17:05:49] (DispatcherServlet:547) - Completed initialization in 1 ms
 [INFO ] [2022-08-24 17:05:52] (ClientController:41) - Create User: Client(ruc_dni=12567676767, name=Linux, types=Type(idType=2, description=Empresarial))
 [INFO ] [2022-08-24 17:06:42] (ClientController:41) - Create User: Client(ruc_dni=534534545, name=Lucas Vasquez, types=Type(idType=1, description=Personal))
+[INFO ] [2022-08-24 17:41:12] (LocalContainerEntityManagerFactoryBean:651) - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] [2022-08-24 17:41:12] (HikariDataSource:350) - HikariPool-1 - Shutdown initiated...
+[INFO ] [2022-08-24 17:41:12] (HikariDataSource:352) - HikariPool-1 - Shutdown completed.
+[INFO ] [2022-08-24 17:41:18] (ClientJPAApplication:55) - Starting ClientJPAApplication using Java 11 on LIM-H5YF5M3 with PID 14856 (C:\Users\jquinonr\workspace\IdeaProjects\ClientJPA\target\classes started by jquinonr in C:\Users\jquinonr\workspace\IdeaProjects\ClientJPA)
+[INFO ] [2022-08-24 17:41:18] (ClientJPAApplication:634) - No active profile set, falling back to 1 default profile: "default"
+[INFO ] [2022-08-24 17:41:19] (RepositoryConfigurationDelegate:132) - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] [2022-08-24 17:41:19] (RepositoryConfigurationDelegate:201) - Finished Spring Data repository scanning in 56 ms. Found 2 JPA repository interfaces.
+[INFO ] [2022-08-24 17:41:20] (TomcatWebServer:108) - Tomcat initialized with port(s): 3000 (http)
+[INFO ] [2022-08-24 17:41:20] (Http11NioProtocol:173) - Initializing ProtocolHandler ["http-nio-3000"]
+[INFO ] [2022-08-24 17:41:20] (StandardService:173) - Starting service [Tomcat]
+[INFO ] [2022-08-24 17:41:20] (StandardEngine:173) - Starting Servlet engine: [Apache Tomcat/9.0.65]
+[INFO ] [2022-08-24 17:41:20] ([/]:173) - Initializing Spring embedded WebApplicationContext
+[INFO ] [2022-08-24 17:41:20] (ServletWebServerApplicationContext:292) - Root WebApplicationContext: initialization completed in 2087 ms
+[INFO ] [2022-08-24 17:41:21] (LogHelper:31) - HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO ] [2022-08-24 17:41:21] (Version:44) - HHH000412: Hibernate ORM core version 5.6.10.Final
+[INFO ] [2022-08-24 17:41:21] (Version:56) - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[INFO ] [2022-08-24 17:41:21] (HikariDataSource:110) - HikariPool-1 - Starting...
+[INFO ] [2022-08-24 17:41:21] (HikariDataSource:123) - HikariPool-1 - Start completed.
+[INFO ] [2022-08-24 17:41:21] (Dialect:175) - HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+[INFO ] [2022-08-24 17:41:22] (JtaPlatformInitiator:52) - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[INFO ] [2022-08-24 17:41:22] (LocalContainerEntityManagerFactoryBean:437) - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] [2022-08-24 17:41:22] (TypeServiceImpl:47) - Listar tipos de cliente
+[WARN ] [2022-08-24 17:41:22] (JpaBaseConfiguration$JpaWebConfiguration:219) - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] [2022-08-24 17:41:23] (EndpointLinksResolver:58) - Exposing 1 endpoint(s) beneath base path '/actuator'
+[INFO ] [2022-08-24 17:41:23] (Http11NioProtocol:173) - Starting ProtocolHandler ["http-nio-3000"]
+[INFO ] [2022-08-24 17:41:23] (TomcatWebServer:220) - Tomcat started on port(s): 3000 (http) with context path ''
+[INFO ] [2022-08-24 17:41:23] (ClientJPAApplication:61) - Started ClientJPAApplication in 5.449 seconds (JVM running for 6.381)
+[INFO ] [2022-08-24 17:41:33] (LocalContainerEntityManagerFactoryBean:651) - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] [2022-08-24 17:41:33] (HikariDataSource:350) - HikariPool-1 - Shutdown initiated...
+[INFO ] [2022-08-24 17:41:33] (HikariDataSource:352) - HikariPool-1 - Shutdown completed.

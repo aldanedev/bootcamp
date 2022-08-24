@@ -20,12 +20,13 @@ public class ClientController {
 
     @GetMapping
     public ResponseEntity<List<Client>> getClients(){
+        logger.info("Listado de Clientes");
         return new ResponseEntity<>(clientService.getClients(), HttpStatus.OK);
     }
 
     @GetMapping("{ruc_dni}")
     public ResponseEntity<Client> getById(@PathVariable Long ruc_dni){
-        logger.info("RUC_DNI: " + ruc_dni);
+        logger.info("Buscar Cliente por RUC_DNI: " + ruc_dni);
         if(clientService.getById(ruc_dni).isEmpty()){
             return new ResponseEntity(HttpStatus.NOT_FOUND);
         }else{
@@ -35,7 +36,7 @@ public class ClientController {
 
     @PostMapping
     public ResponseEntity<Client> create (@RequestBody Client client){
-        logger.info("Create User: " + client);
+        logger.info("Registro de cliente: " + client);
         return new ResponseEntity(clientService.create(client), HttpStatus.CREATED);
     }
 
@@ -51,6 +52,7 @@ public class ClientController {
 
     @DeleteMapping("{ruc_dni}")
     public ResponseEntity<Void> delete(@PathVariable Long ruc_dni){
+        logger.info("Eliminar Cliente por dni_ruc: " + ruc_dni);
         if(clientService.getById(ruc_dni).isEmpty()){
             return new ResponseEntity(HttpStatus.NOT_FOUND);
         }else{
