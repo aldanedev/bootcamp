@@ -19,5 +19,5 @@ public class CreditCard {
     @Indexed(unique = true)
     private String number;
     private Double limitCredit;
-    private String customerId;
+    private Long customerId;
 }
