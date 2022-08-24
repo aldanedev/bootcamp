@@ -27,7 +27,7 @@ public class ClientController {
     }
 
     @GetMapping("{ruc_dni}")
-    public ResponseEntity<Client> getById(@PathVariable Integer ruc_dni){
+    public ResponseEntity<Client> getById(@PathVariable Long ruc_dni){
         logger.info("RUC_DNI: " + ruc_dni);
         if(clientService.getById(ruc_dni).isEmpty()){
             return new ResponseEntity(HttpStatus.NOT_FOUND);
@@ -43,7 +43,7 @@ public class ClientController {
     }
 
     @PutMapping("{ruc_dni}")
-    public ResponseEntity<Client> update(@PathVariable Integer ruc_dni, @RequestBody Client client){
+    public ResponseEntity<Client> update(@PathVariable Long ruc_dni, @RequestBody Client client){
         logger.info("Cliente a editar: " + clientService.getById(ruc_dni));
         if(clientService.getById(ruc_dni).isEmpty()){
             return new ResponseEntity(HttpStatus.NOT_FOUND);
@@ -53,7 +53,7 @@ public class ClientController {
     }
 
     @DeleteMapping("{ruc_dni}")
-    public ResponseEntity<Void> delete(@PathVariable Integer ruc_dni){
+    public ResponseEntity<Void> delete(@PathVariable Long ruc_dni){
         if(clientService.getById(ruc_dni).isEmpty()){
             return new ResponseEntity(HttpStatus.NOT_FOUND);
         }else{

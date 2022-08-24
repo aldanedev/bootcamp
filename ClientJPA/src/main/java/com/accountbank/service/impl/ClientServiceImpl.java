@@ -25,7 +25,7 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public List<Client> getById(Integer ruc_dni) {
+    public List<Client> getById(Long ruc_dni) {
         logger.info("Usuario encontrado ? " + clientRepository.findById(ruc_dni));
         return clientRepository.findById(ruc_dni).stream().collect(Collectors.toList());
     }
@@ -41,7 +41,7 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public void delete(Integer ruc_dni) {
+    public void delete(Long ruc_dni) {
         clientRepository.deleteById(ruc_dni);
     }
 }

@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.math.BigInteger;
 
 @Data
 @Entity
@@ -12,7 +13,7 @@ import javax.persistence.*;
 public class Client {
     @Id
     @Column(name = "ruc_dni", nullable = false, unique = true, length = 255)
-    private Integer ruc_dni;
+    private Long ruc_dni;
 
     @Column(name = "name", nullable = false, length = 255)
     private String name;
