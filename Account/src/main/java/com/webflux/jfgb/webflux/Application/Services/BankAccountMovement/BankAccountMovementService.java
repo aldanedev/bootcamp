@@ -1,7 +1,7 @@
 package com.webflux.jfgb.webflux.Application.Services.BankAccountMovement;
 
 import com.webflux.jfgb.webflux.Application.Models.Enum.BanksAccountTypeEnum;
-import com.webflux.jfgb.webflux.Application.Models.Enum.ClientsTypesEnum;
+import com.webflux.jfgb.webflux.Application.Models.Enum.CustomerTypesEnum;
 import com.webflux.jfgb.webflux.Domain.BankAccount;
 import com.webflux.jfgb.webflux.Domain.BankAccountMovement;
 import com.webflux.jfgb.webflux.Infrastructure.BankAccountMovementRepository;
@@ -32,11 +32,10 @@ public class BankAccountMovementService implements IBankAccountMovementService {
                             return Mono.error(new Exception("Account bank movement exceeds limit"));
                         }
 
-                        // SI ES AHORRO o PLAZO FIJO Y QUE NO SEA EMPRESARIAL.
                         if(
                                 (bankAccountMovement.getCommission() == 0.00) &&
                                 (bankAccountMovement.getAccountType().equals(BanksAccountTypeEnum.C_AHORRO) || bankAccountMovement.getAccountType().equals(BanksAccountTypeEnum.C_PLAZOFIJO)) &&
-                                 !bankAccountMovement.getCustomerType().equals(ClientsTypesEnum.EMPRESARIAL)
+                                        (!bankAccountMovement.getCustomerType().equals(CustomerTypesEnum.EMPRESARIAL))
                         ){
                             return bankAccountMovementRepository.save(bankAccountMovement);
                         }

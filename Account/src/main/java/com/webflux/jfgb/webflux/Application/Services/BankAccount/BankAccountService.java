@@ -1,5 +1,6 @@
 package com.webflux.jfgb.webflux.Application.Services.BankAccount;
 
+import com.webflux.jfgb.webflux.Application.Models.Enum.CustomerTypesEnum;
 import com.webflux.jfgb.webflux.Domain.BankAccount;
 import com.webflux.jfgb.webflux.Infrastructure.BankAccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,15 +22,27 @@ public class BankAccountService implements IBankAccountService {
         Function<Boolean, Mono<BankAccount>> exits = (Boolean b) -> {
             if (b) {
                 return Mono.error(new Exception("Account bank already registered"));
-            } else {
+            }
+
+            if(bankAccount.getCustomerType().equals(CustomerTypesEnum.EMPRESARIAL) &&
+                    bankAccount.getSignatories().size() >= 0 &&
+                    bankAccount.getHeadLineList().size() > 0
+            ){
                 return bankAccountRepository.save(bankAccount);
+            }
+
+            if(!bankAccount.getCustomerType().equals(CustomerTypesEnum.EMPRESARIAL)){
+                return bankAccountRepository.save(bankAccount);
+            }
+
+            else {
+                return Mono.error(new Exception("Unauthorized Bank Account"));
             }
         };
 
         return bankAccountRepository.findByNumber(bankAccount.getNumber())
                 .hasElement()
                 .flatMap(exits);
-
     }
 
     public Mono<BankAccount> findById(String id) {

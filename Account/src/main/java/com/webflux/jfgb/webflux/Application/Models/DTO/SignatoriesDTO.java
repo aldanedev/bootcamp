@@ -5,7 +5,7 @@ import lombok.ToString;
 
 @ToString
 @Data
-public class Signatories {
+public class SignatoriesDTO {
     private String id;
     private String name;
     private String description;
