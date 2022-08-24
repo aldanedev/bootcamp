@@ -1,5 +1,5 @@
 package com.webflux.jfgb.webflux.Application.Models.Enum;
 
-public enum ClientsTypesEnum {
+public enum CustomerTypesEnum {
     EMPRESARIAL, PERSONAL
 }

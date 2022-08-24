@@ -2,6 +2,7 @@ package com.webflux.jfgb.webflux.Domain;
 
 import com.webflux.jfgb.webflux.Application.Models.Enum.BanksAccountMovementTypeEnum;
 import com.webflux.jfgb.webflux.Application.Models.Enum.BanksAccountTypeEnum;
+import com.webflux.jfgb.webflux.Application.Models.Enum.CustomerTypesEnum;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,7 +23,7 @@ public class BankAccountMovement {
     private BanksAccountMovementTypeEnum accountMovementType;
     private BanksAccountTypeEnum accountType;
     private Double commission;
-    private String customerType;
+    private CustomerTypesEnum customerType;
 
     public Double getCommissionSigned() {
         return (this.accountType == accountType.C_AHORRO ? this.commission = 0.0 :
