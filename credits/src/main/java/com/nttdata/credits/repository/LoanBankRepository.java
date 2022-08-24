@@ -3,9 +3,9 @@ package com.nttdata.credits.repository;
 import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 import org.springframework.stereotype.Repository;
 
-import com.nttdata.credits.domain.CreditCart;
+import com.nttdata.credits.domain.LoanBank;
 
 @Repository
-public interface CreditRepository  extends ReactiveMongoRepository<CreditCart, String> {
-    
+public interface LoanBankRepository extends ReactiveMongoRepository<LoanBank, String> {
+
 }
