@@ -5,8 +5,8 @@ spring:
     config:
       server:
         git:
-          default-label: main
           uri: https://github.com/aldanedev/bootcamp
+          default-label: main
           search-paths: configdata
           username: ${GIT_USERNAME}
           password: ${GIT_PASSWORD}
