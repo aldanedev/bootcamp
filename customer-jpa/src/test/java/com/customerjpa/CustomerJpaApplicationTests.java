@@ -1,10 +1,10 @@
-package com.accountbank;
+package com.customerjpa;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class CreditApplicationTests {
+class CustomerJpaApplicationTests {
 
 	@Test
 	void contextLoads() {

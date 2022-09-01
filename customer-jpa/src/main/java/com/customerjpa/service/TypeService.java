@@ -1,13 +1,12 @@
-package com.accountbank.service;
+package com.customerjpa.service;
 
 
-import com.accountbank.model.Type;
+import com.customerjpa.entity.Type;
 
 import java.util.List;
 
 public interface TypeService {
     void init();
     List<Type> create(Type type);
-
-    List<Type> getTypes();
+    List<Type> listTypes();
 }

@@ -1,18 +1,19 @@
-package com.accountbank.model;
+package com.customerjpa.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
 
-@Data
 @Entity
 @Table(name = "type")
+@Data @NoArgsConstructor @AllArgsConstructor @Builder
 public class Type {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idType;
+    private Integer id;
 
-    @Column(name = "description", nullable = false, length = 255)
     private String description;
 }

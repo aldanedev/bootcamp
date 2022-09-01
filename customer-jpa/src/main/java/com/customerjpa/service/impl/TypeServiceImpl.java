@@ -1,9 +1,8 @@
-package com.accountbank.service.impl;
+package com.customerjpa.service.impl;
 
-import com.accountbank.model.Type;
-import com.accountbank.repository.ClientRepository;
-import com.accountbank.repository.TypeRepository;
-import com.accountbank.service.TypeService;
+import com.customerjpa.entity.Type;
+import com.customerjpa.repository.TypeRepository;
+import com.customerjpa.service.TypeService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +22,7 @@ public class TypeServiceImpl implements TypeService{
     @Override
     @PostConstruct
     public void init() {
-        if(getTypes().isEmpty()){
+        if(listTypes().isEmpty()){
             Type per = new Type();
             per.setDescription("Personal");
             create(per);
@@ -32,19 +31,17 @@ public class TypeServiceImpl implements TypeService{
             emp.setDescription("Empresarial");
             create(emp);
 
-            logger.info("Se crearon los tipos de clientes 'Personal' y 'Empresarial'");
+            logger.info("Se crearon los tipos de Customer 'Personal' y 'Empresarial'");
         }
     }
 
     @Override
     public List<Type> create(Type type) {
-        logger.info("Registrando Tipos de clientes: " + type);
         return List.of(typeRepository.save(type));
     }
 
     @Override
-    public List<Type> getTypes() {
-        logger.info("Listar tipos de cliente");
+    public List<Type> listTypes() {
         return typeRepository.findAll();
     }
 }

@@ -5,7 +5,7 @@
             <PatternLayout
                     pattern="[%-5p] [%d{yyyy-MM-dd HH:mm:ss}] (%c{1}:%L) - %m%n" />
         </Console>
-        <File name="File" fileName="client.log">
+        <File name="File" fileName="customer.log">
             <PatternLayout
                     pattern="[%-5p] [%d{yyyy-MM-dd HH:mm:ss}] (%c{1}:%L) - %m%n" />
         </File>
